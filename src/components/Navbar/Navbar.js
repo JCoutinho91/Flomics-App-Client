@@ -15,6 +15,9 @@ function Navbar() {
 
       {isLoggedIn && (
         <>
+          <Link to="/dashboard">
+            <button onClick={logOutUser}>DashBoard</button>
+          </Link>
           <button onClick={logOutUser}>Logout</button>
         </>
       )}
@@ -33,7 +36,7 @@ function Navbar() {
 
       <div className="profile-img-wrapper">
         {user && (
-          <Link to="/profile">
+          <Link to="/profile/">
             <img className="profile-img" src={user.image} alt="profile" />
           </Link>
         )}
