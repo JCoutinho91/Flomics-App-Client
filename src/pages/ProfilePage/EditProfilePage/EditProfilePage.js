@@ -68,6 +68,13 @@ function EditProjectPage(props) {
 
         <input type="submit" value="Submit" />
       </form>
+      <button
+        onClick={() => {
+          navigate(-1);
+        }}
+      >
+        Back
+      </button>
     </div>
   );
 }

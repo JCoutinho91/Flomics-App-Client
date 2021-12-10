@@ -1,48 +1,53 @@
+import "./Navbar.css";
+import { useState } from "react/cjs/react.development";
+import { FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-import { useContext } from "react";
-import { AuthContext } from "../../context/auth.context";
+const Navbar = ({ logoimg }) => {
+  // Determines if the "menu icon" was clicked or not. Note that this icon is only visible when the window width is small.
+  const [menuClicked, setMenuClicked] = useState(false);
 
-function Navbar() {
-  // Get the value from the context
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+  const navbarLinks = [
+    { url: "/login", title: "Login" },
+    { url: "/signup", title: "Sign Up" },
+    { url: "/learn", title: "Learn More" },
+  ];
+
+  const toggleMenuClick = () => {
+    setMenuClicked(!menuClicked);
+  };
 
   return (
-    <nav className="Navbar">
-      <Link to="/">
-        <button>Home</button>
-      </Link>
-
-      {isLoggedIn && (
-        <>
-          <Link to="/dashboard">
-            <button onClick={logOutUser}>DashBoard</button>
-          </Link>
-          <button onClick={logOutUser}>Logout</button>
-        </>
+    <nav className="navbar">
+      <span>
+        <img className="navbar__logo" src={logoimg} alt="." />{" "}
+      </span>
+      {menuClicked ? (
+        <FiX size={25} className={"navbar__menu"} onClick={toggleMenuClick} />
+      ) : (
+        <FiMenu
+          size={25}
+          className={"navbar__menu"}
+          onClick={toggleMenuClick}
+        />
       )}
-
-      {!isLoggedIn && (
-        <>
-          <Link to="/signup">
-            <button>Sign Up</button>
-          </Link>
-
-          <Link to="/login">
-            <button>Login</button>
-          </Link>
-        </>
-      )}
-
-      <div className="profile-img-wrapper">
-        {user && (
-          <Link to="/profile/">
-            <img className="profile-img" src={user.image} alt="profile" />
-          </Link>
-        )}
-      </div>
+      <ul
+        className={
+          menuClicked ? "navbar__list navbar__list--active" : "navbar__list"
+        }
+      >
+        {navbarLinks.map((item, index) => {
+          return (
+            <Link to={item.url} key={index}>
+              <li className="navbar__item">
+                {" "}
+                <p className="navbar__link">{item.title}</p>
+              </li>
+            </Link>
+          );
+        })}
+      </ul>
     </nav>
   );
-}
-
+};
 export default Navbar;

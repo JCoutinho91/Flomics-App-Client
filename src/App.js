@@ -1,28 +1,40 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-
-import Navbar from "./components/Navbar/Navbar";
-
 import HomePage from "./pages/HomePage/HomePage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
-import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage/ProfilePage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import DashBoardPage from "./pages/DashBoard/DashBoardPage";
 import AnalysisPage from "./pages/AnalysisPage/AnalysisPage";
 
 import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
+import EditProjectPage from "./pages/ProfilePage/EditProfilePage/EditProfilePage";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/analysis" element={<AnalysisPage />} />
-        <Route path="/dashboard" element={<DashBoardPage />} />
+        <Route
+          path="/dashboard"
+          element={
+            <IsPrivate>
+              {" "}
+              <DashBoardPage />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/analysis"
+          element={
+            <IsPrivate>
+              {" "}
+              <AnalysisPage />{" "}
+            </IsPrivate>
+          }
+        />
         <Route
           path="/profile"
           element={
@@ -32,25 +44,17 @@ function App() {
             </IsPrivate>
           }
         />
-
         <Route
-          path="/signup"
+          path="/profile/edit"
           element={
-            <IsAnon>
+            <IsPrivate>
               {" "}
-              <SignupPage />{" "}
-            </IsAnon>
+              <EditProjectPage />{" "}
+            </IsPrivate>
           }
         />
-        <Route
-          path="/login"
-          element={
-            <IsAnon>
-              {" "}
-              <LoginPage />{" "}
-            </IsAnon>
-          }
-        />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>

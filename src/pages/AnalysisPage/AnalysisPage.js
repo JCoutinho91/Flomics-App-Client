@@ -26,6 +26,7 @@ function AnalysisPage() {
 
   return (
     <div className="analysis">
+      <h1>This is the company data page</h1>
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
           width={500}

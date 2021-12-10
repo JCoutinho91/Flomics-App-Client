@@ -39,7 +39,7 @@ function LoginPage(props) {
       const token = response.data.authToken;
       logInUser(token);
 
-      navigate("/");
+      navigate("/dashboard");
     } catch (error) {
       // If the request resolves with an error, set the error message in the state
       setErrorMessage("Something went wrong");
