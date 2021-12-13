@@ -19,7 +19,6 @@ function EditProjectPage(props) {
             headers: { Authorization: `Bearer ${storedToken}` },
           });
           const currentUser = response.data;
-          console.log(currentUser);
           setEmail(currentUser.name);
           setName(currentUser.email);
           setImage(currentUser.image);

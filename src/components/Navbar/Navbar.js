@@ -11,6 +11,7 @@ const Navbar = ({ logoimg }) => {
     { url: "/login", title: "Login" },
     { url: "/signup", title: "Sign Up" },
     { url: "/learn", title: "Learn More" },
+    { url: "/adminlogin", title: "Admin" },
   ];
 
   const toggleMenuClick = () => {

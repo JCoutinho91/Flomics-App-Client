@@ -11,6 +11,9 @@ import AnalysisPage from "./pages/AnalysisPage/AnalysisPage";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
 import EditProjectPage from "./pages/ProfilePage/EditProfilePage/EditProfilePage";
+import ResultsPage from "./pages/ResultsPage/ResultsPage";
+import RequestsPage from "./pages/RequestsPage/RequestsPage";
+import AdminLogin from "./pages/LoginPage/AdminLogin";
 
 function App() {
   return (
@@ -36,6 +39,24 @@ function App() {
           }
         />
         <Route
+          path="/results"
+          element={
+            <IsPrivate>
+              {" "}
+              <ResultsPage />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/requests"
+          element={
+            <IsPrivate>
+              {" "}
+              <RequestsPage />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
           path="/profile"
           element={
             <IsPrivate>
@@ -55,6 +76,7 @@ function App() {
         />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
