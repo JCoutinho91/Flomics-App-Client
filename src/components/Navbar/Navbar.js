@@ -9,6 +9,7 @@ const navbarLinks = [
   { url: "/learn", title: "Learn More" },
   { url: "/adminlogin", title: "Admin" },
 ];
+
 const Navbar = ({ logoimg }) => {
   const [menuClicked, setMenuClicked] = useState(false);
 

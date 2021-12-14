@@ -14,6 +14,9 @@ import EditProjectPage from "./pages/ProfilePage/EditProfilePage/EditProfilePage
 import ResultsPage from "./pages/ResultsPage/ResultsPage";
 import RequestsPage from "./pages/RequestsPage/RequestsPage";
 import AdminLogin from "./pages/LoginPage/AdminLogin";
+import AdminDashBoard from "./pages/AdminPages/AdminDashBoard/AdminDashBoard";
+import AdminEditRequests from "./pages/AdminPages/AdminEditRequests/AdminEditRequests";
+import AdminEditSamples from "./pages/AdminPages/AdminEditSamples/AdminEditSamples";
 
 function App() {
   return (
@@ -26,6 +29,33 @@ function App() {
             <IsPrivate>
               {" "}
               <DashBoardPage />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/admindashboard"
+          element={
+            <IsPrivate>
+              {" "}
+              <AdminDashBoard />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/admindashboard/requests/:requestId"
+          element={
+            <IsPrivate>
+              {" "}
+              <AdminEditRequests />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/admindashboard/samples/:sampleId"
+          element={
+            <IsPrivate>
+              {" "}
+              <AdminEditSamples />{" "}
             </IsPrivate>
           }
         />

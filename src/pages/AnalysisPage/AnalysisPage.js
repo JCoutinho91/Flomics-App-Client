@@ -5,9 +5,6 @@ const API_URL = "http://localhost:5005/api/users/current";
 
 function AnalysisPage(props) {
   const [userSamples, setUserSamples] = useState([]);
-  const [name, setName] = useState("");
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
