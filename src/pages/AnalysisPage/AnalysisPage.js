@@ -7,8 +7,6 @@ function AnalysisPage(props) {
   const [userSamples, setUserSamples] = useState([]);
   // const [name, setName] = useState("");
 
-  const navigate = useNavigate();
-
   useEffect(() => {
     const fetchData = async () => {
       try {

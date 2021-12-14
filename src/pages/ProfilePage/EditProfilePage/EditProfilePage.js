@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const API_URL = "http://localhost:5005/api/users/current";
 
-function EditProjectPage(props) {
+function EditProjectPage() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
 
