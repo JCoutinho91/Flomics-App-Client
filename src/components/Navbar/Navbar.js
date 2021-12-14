@@ -3,16 +3,14 @@ import { useState } from "react/cjs/react.development";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
+const navbarLinks = [
+  { url: "/login", title: "Login" },
+  { url: "/signup", title: "Sign Up" },
+  { url: "/learn", title: "Learn More" },
+  { url: "/adminlogin", title: "Admin" },
+];
 const Navbar = ({ logoimg }) => {
-  // Determines if the "menu icon" was clicked or not. Note that this icon is only visible when the window width is small.
   const [menuClicked, setMenuClicked] = useState(false);
-
-  const navbarLinks = [
-    { url: "/login", title: "Login" },
-    { url: "/signup", title: "Sign Up" },
-    { url: "/learn", title: "Learn More" },
-    { url: "/adminlogin", title: "Admin" },
-  ];
 
   const toggleMenuClick = () => {
     setMenuClicked(!menuClicked);
