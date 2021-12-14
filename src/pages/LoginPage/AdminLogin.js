@@ -4,10 +4,9 @@ import axios from "axios";
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
-
 import authService from "../../services/auth.service";
 
-function LoginPage(props) {
+function AdminLogin(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
@@ -72,4 +71,4 @@ function LoginPage(props) {
   );
 }
 
-export default LoginPage;
+export default AdminLogin;
