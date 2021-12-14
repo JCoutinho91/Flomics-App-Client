@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const API_URL = "http://localhost:5005/api/users/current";
 
 function AnalysisPage(props) {
   const [userSamples, setUserSamples] = useState([]);
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
 
   const navigate = useNavigate();
 
@@ -46,7 +46,6 @@ function AnalysisPage(props) {
           </div>
         );
       })}
-      <h2></h2>
     </div>
   );
 }

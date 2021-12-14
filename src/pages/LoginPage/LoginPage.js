@@ -5,8 +5,6 @@ import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 
-import authService from "../../services/auth.service";
-
 function LoginPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

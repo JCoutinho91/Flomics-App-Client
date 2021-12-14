@@ -7,8 +7,6 @@ function EditProjectPage(props) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
 
-  const { userId } = useParams();
-
   const navigate = useNavigate();
 
   useEffect(() => {

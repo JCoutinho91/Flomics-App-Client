@@ -9,7 +9,6 @@ import DashBoardPage from "./pages/DashBoard/DashBoardPage";
 import AnalysisPage from "./pages/AnalysisPage/AnalysisPage";
 
 import IsPrivate from "./components/IsPrivate/IsPrivate";
-import IsAnon from "./components/IsAnon/IsAnon";
 import EditProjectPage from "./pages/ProfilePage/EditProfilePage/EditProfilePage";
 import ResultsPage from "./pages/ResultsPage/ResultsPage";
 import RequestsPage from "./pages/RequestsPage/RequestsPage";

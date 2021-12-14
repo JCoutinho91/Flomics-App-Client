@@ -4,7 +4,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
-import Select from "react-select";
 import {
   LineChart,
   Line,
@@ -21,8 +20,8 @@ const apiURL = "http://localhost:5005/api/variant";
 function DashBoardPage() {
   const [region, setRegion] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [options, setOptions] = useState([]);
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+  // const [options, setOptions] = useState([]);
+  const { isLoggedIn, logOutUser } = useContext(AuthContext);
 
   useEffect(() => {
     axios.get(apiURL).then((response) => {
@@ -49,10 +48,6 @@ function DashBoardPage() {
   //  return setOptions(el.Entity);
   // });
 
-  const onchangeSelect = (item) => {
-    setSelectedOption(item.value);
-    setRegion(item);
-  };
   return (
     <div className="dashboard">
       <h1>This is the dashboard</h1>
