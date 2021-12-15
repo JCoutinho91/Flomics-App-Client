@@ -7,7 +7,6 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage/ProfilePage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import DashBoardPage from "./pages/DashBoard/DashBoardPage";
 import AnalysisPage from "./pages/AnalysisPage/AnalysisPage";
-
 import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
 import EditProjectPage from "./pages/ProfilePage/EditProfilePage/EditProfilePage";

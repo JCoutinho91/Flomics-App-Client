@@ -1,14 +1,7 @@
-import "./DashBoard.css";
-import { useState, useEffect } from "react";
-import TopBar from "../../components/TopBar/TopBar"
-import Chart from "../../components/Charts/Chart"
-import SideBar from "../../components/SideBar/SideBar"
-import FeaturedInfo from "../../components/FeaturedInfo/FeaturedInfo"
-import axios from "axios";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
+import axios from "axios"
+import {useState, useEffect, useContext} from "react"
 import { AuthContext } from "../../context/auth.context";
-import Select from "react-select";
+import "./Chart.css";
 import {
   LineChart,
   Line,
@@ -19,11 +12,10 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-
 const apiURL = "http://localhost:5005/api/variant";
 
-function DashBoardPage() {
-  const [region, setRegion] = useState([]);
+function Chart() {
+    const [region, setRegion] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
   const [options, setOptions] = useState([]);
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
@@ -48,43 +40,10 @@ function DashBoardPage() {
     });
     setSelectedOption(getCountry);
   };
-
-  //const mappedOptions = region[0].map((el) => {
-  //  return setOptions(el.Entity);
-  // });
-
-  const onchangeSelect = (item) => {
-    setSelectedOption(item.value);
-    setRegion(item);
-  };
   return (
-<>
-    <TopBar/>
-    <div className="dashboard">
-    <SideBar/>
-    <FeaturedInfo/>
-    <Chart/>
-    {/*   <Link to="/profile">
-      {isLoggedIn && (
-        <>
-          <button onClick={logOutUser}>Logout</button>
-        </>
-      )}
-        <button>Your Profile</button>
-      </Link>
-      <Link to="/analysis">
-        <button>Analysis</button>
-      </Link>
-      <Link to="/results">
-        <button>Results</button>
-      </Link>
-      <Link to="/requests">
-        <button>Requests</button>
-      </Link>
-*/}
-
-      <div className="chart">
-        <select onChange={handleChange}>
+    <div className="chart">
+      <h3 className="chartTitle">Variant Overview</h3>
+      <select onChange={handleChange}>
           {region.map((country, i) => (
             <option key={country._id} value={country.Entity}>
               {country.Entity}{" "}
@@ -117,9 +76,8 @@ function DashBoardPage() {
             <Line type="monotone" dataKey="Omicron" stroke="#82ca9d" />
           </LineChart>
         </ResponsiveContainer>
-      </div>
     </div>
-    </>
   );
 }
-export default DashBoardPage;
+
+export default Chart;
