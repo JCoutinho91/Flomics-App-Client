@@ -69,8 +69,8 @@ const columns = [
         pageSize={5}
         checkboxSelection
       />
-      <AddRequest/>
       </div>
+      <AddRequest/>
     </div>
     </>
   );
