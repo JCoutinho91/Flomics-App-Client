@@ -1,4 +1,7 @@
-.analysis {
-  width: 1000px;
-  height: 700px;
+.dashboard {
+  display: flex;
+}
+
+.home{
+  flex:4;
 }

@@ -37,7 +37,7 @@ function TopBar() {
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topleft">
-          <Link to="/">
+          <Link to="/dashboard">
           
             <span className="logo">
               <img className="logoimg" src={companyLogo} alt="flologo" />
@@ -46,15 +46,7 @@ function TopBar() {
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">
-            <Notifications/>
-            <span className="topIconBag">2</span>
-          </div>
-          <div className="topbarIconContainer">
-            <Chat/>
-            <span className="topIconBag">2</span>
-          </div>
-          <div className="topbarIconContainer">
-              <Settings/>
+            Welcome! {name}
           </div>
           <Link to="/profile"><img src={image} alt="userimg" className="topavatar" /></Link>
         </div>

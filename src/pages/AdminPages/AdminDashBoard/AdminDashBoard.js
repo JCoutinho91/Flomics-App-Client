@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import TopBar from "../../../components/TopBar/TopBar";
 const urlRequests = "http://localhost:5005/api/requests";
 const urlSamples = "http://localhost:5005/api/results";
 const urlUsers = "http://localhost:5005/api/users";
@@ -14,6 +15,7 @@ function AdminDashBoard() {
     const fetchData = async () => {
       axios.get(urlRequests).then((response) => {
         const requestsData = response.data;
+        console.log(requestsData)
 
         setUserRequests(requestsData);
       });
@@ -36,6 +38,7 @@ function AdminDashBoard() {
 
   return (
     <div>
+    <TopBar/>
       <h1>User Requests:</h1>
       <br />
       <ul>

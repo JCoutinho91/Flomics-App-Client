@@ -1,117 +1,117 @@
 import "./SideBar.css";
+import {
+  LineStyle,
+  Timeline,
+  TrendingUp,
+  PermIdentity,
+  BarChart,
+  ChatBubbleOutline,
+} from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
-function SideBar() {
+export default function Sidebar() {
   return (
-    <h4>
-      <div className="sidebar">
-        <div className="sidebarWrapper">
-          <div className="sidebarMenu">
-            <h3 className="SideBarTitle">Dashboard</h3>
-            <ul className="sidebarList">
-              <li className="sidebarListItem active">
-                <img className="sidebarimg" src="./casa.png" alt="casaicon" />
-                Home
-              </li>
-              <Link to="/analysis">
-                <li className="sidebarListItem">
-                  <img
-                    src="./analytics.png"
-                    alt="analyticsicon"
-                    className="sidebarimg"
-                  />
-                  Analytics
-                </li>
-              </Link>
+    <div className="sidebar">
+      <div className="sidebarWrapper">
+        <div className="sidebarMenu">
+          <h3 className="sidebarTitle">Home</h3>
+          <ul className="sidebarList">
+            <Link to="/dashboard" className="link">
+            <li className="sidebarListItem active">
+              <LineStyle className="sidebarIcon" />
+              Home
+            </li>
+            </Link>
+          </ul>
+        </div>
+        <div className="sidebarMenu">
+          <h3 className="sidebarTitle">Compare Variant by Country</h3>
+          <ul className="sidebarList">
+            <Link to="/alpha">
+            <li className="sidebarListItem">
+              <Timeline className="sidebarIcon" />
+              Alpha
+            </li>
+            </Link>
+             <Link to="/beta">
+            <li className="sidebarListItem">
+              <BarChart className="sidebarIcon" />
+              Beta
+            </li>
+            </Link>
+            <Link to="/delta" className="link">
               <li className="sidebarListItem">
-                <img
-                  src="./results.png"
-                  alt="resultsimg"
-                  className="sidebarimg"
-                />
-                Results
+                <Timeline className="sidebarIcon" />
+                 Delta
               </li>
-            </ul>
-          </div>
-          <div className="sidebarMenu">
-            <h3 className="SideBarTitle">Navigation</h3>
-            <ul className="sidebarList">
-              <li className="sidebarListItem ">
-                <img className="sidebarimg" src="./user.png" alt="userimg" />
+            </Link>
+            <Link to="/lambda">
+            <li className="sidebarListItem">
+              <BarChart className="sidebarIcon" />
+              Lambda
+            </li>
+            </Link>
+             <Link to="/gamma">
+            <li className="sidebarListItem">
+              <Timeline className="sidebarIcon" />
+              Gamma
+            </li>
+            </Link>
+             <Link to="/kappa">
+            <li className="sidebarListItem">
+              <BarChart className="sidebarIcon" />
+               Kappa
+            </li>
+            </Link>
+            <Link to="/mu">
+            <li className="sidebarListItem">
+              <Timeline className="sidebarIcon" />
+              Mu
+            </li>
+            </Link>
+            <Link to="/omicron" className="link">
+              <li className="sidebarListItem">
+                <BarChart className="sidebarIcon" />
+                Omicron
+              </li>
+            </Link>
+          </ul>
+        </div>
+        <div className="sidebarMenu">
+          <h3 className="sidebarTitle">Your Lab</h3>
+          <ul className="sidebarList">
+            <li className="sidebarListItem">
+              <ChatBubbleOutline className="sidebarIcon" />
+              Charts
+            </li>
+            <Link to="/results">
+            <li className="sidebarListItem">
+              <TrendingUp className="sidebarIcon" />
+              Lab Results
+            </li>
+            </Link>
+            <Link to="/requests">
+            <li className="sidebarListItem">
+              <TrendingUp className="sidebarIcon" />
+              Requests
+            </li>
+            </Link>
+          </ul>
+        </div>
+        <div className="sidebarMenu">
+          <h3 className="sidebarTitle">Data</h3>
+          <ul className="sidebarList">
+            <Link to="/variant" className="link">
+              <li className="sidebarListItem">
+                <PermIdentity className="sidebarIcon" />
                 Variants Data
               </li>
-              <li className="sidebarListItem">
-                <img
-                  src="./linechart.png"
-                  alt="analyticsicon"
-                  className="sidebarimg"
-                />
-                Charts
-              </li>
-              <li className="sidebarListItem">
-                <img src="./balance.png" alt="chatimg" className="sidebarimg" />
-                Compare
-              </li>
-            </ul>
-          </div>
-          <div className="sidebarMenu">
-            <h3 className="SideBarTitle">Your Laboratory</h3>
-            <ul className="sidebarList">
-              <li className="sidebarListItem">
-                <img
-                  className="sidebarimg"
-                  src="./overview.png"
-                  alt="casaicon"
-                />
-                Overview
-              </li>
-              <li className="sidebarListItem">
-                <img
-                  src="./data.png"
-                  alt="analyticsicon"
-                  className="sidebarimg"
-                />
-                Data
-              </li>
-              <li className="sidebarListItem">
-                <img
-                  src="./graph.png"
-                  alt="resultsimg"
-                  className="sidebarimg"
-                />
-                Graphs
-              </li>
-            </ul>
-          </div>
-          <div className="sidebarMenu">
-            <h3 className="SideBarTitle">Help</h3>
-            <ul className="sidebarList">
-              <li className="sidebarListItem">
-                <img className="sidebarimg" src="FAQ.png" alt="casaicon" />
-                FAQS
-              </li>
-              <li className="sidebarListItem">
-                <img
-                  src="./support.png"
-                  alt="analyticsicon"
-                  className="sidebarimg"
-                />
-                Contact Us
-              </li>
-              <li className="sidebarListItem">
-                <img
-                  src="./warning.png"
-                  alt="resultsimg"
-                  className="sidebarimg"
-                />
-                Report Issue
-              </li>
-            </ul>
-          </div>
+            </Link>
+
+          </ul>
         </div>
+        
       </div>
-    </h4>
+    </div>
   );
 }
-
-export default SideBar;

@@ -1,4 +1,3 @@
-import React from "react";
 import "./FeaturedInfo.css";
 import { ArrowDownward, ArrowUpward } from "@material-ui/icons";
 
@@ -6,34 +5,34 @@ function FeaturedInfo() {
   return (
     <div className="featured">
       <div className="featuredItem">
-        <span className="featuredTitle">World Active Cases</span>
-        <div className="featuredNumberContainer">
-          <span className="feauturedCases">200,000</span>
-          <span className="feauturedRecoverCases">
-            46,000 <ArrowDownward className="arrowicon negative" />
+        <span className="featuredTitle">Cases Data</span>
+        <div className="featuredMoneyContainer">
+          <span className="featuredMoney">2,415</span>
+          <span className="featuredMoneyRate">
+            -11.4 <ArrowDownward  className="featuredIcon negative"/>
           </span>
         </div>
-        <span className="featuredsubtitle">Compare to last day</span>
+        <span className="featuredSub">Compared to last month</span>
       </div>
       <div className="featuredItem">
-        <span className="featuredTitle">Last Sample Results</span>
-        <div className="featuredNumberContainer">
-          <span className="feauturedCases">Delta Variant 97% </span>
-          <span className="feauturedRecoverCases">
-            Omicron: 3% <ArrowUpward className="arrowicon" />
+        <span className="featuredTitle">Delta</span>
+        <div className="featuredMoneyContainer">
+          <span className="featuredMoney">$4,415</span>
+          <span className="featuredMoneyRate">
+            -1.4 <ArrowDownward className="featuredIcon negative"/>
           </span>
         </div>
-        <span className="featuredsubtitle">Compare to last day</span>
+        <span className="featuredSub">Compared to last month</span>
       </div>
       <div className="featuredItem">
-        <span className="featuredTitle">Predominant Variant</span>
-        <div className="featuredNumberContainer">
-          <span className="feauturedCases">Delta 98%</span>
-          <span className="feauturedRecoverCases">
-            Omicron: 2% <ArrowUpward className="arrowicon" />
+        <span className="featuredTitle">Omicron</span>
+        <div className="featuredMoneyContainer">
+          <span className="featuredMoney">$2,225</span>
+          <span className="featuredMoneyRate">
+            +2.4 <ArrowUpward className="featuredIcon"/>
           </span>
         </div>
-        <span className="featuredsubtitle">Compare to last day</span>
+        <span className="featuredSub">Compared to last month</span>
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import axios from "axios"
-import {useState, useEffect, useContext} from "react"
-import { AuthContext } from "../../context/auth.context";
+import {useState, useEffect } from "react"
 import "./Chart.css";
 import {
   LineChart,
@@ -15,14 +14,14 @@ import {
 const apiURL = "http://localhost:5005/api/variant";
 
 function Chart() {
-    const [region, setRegion] = useState([]);
+  const [region, setRegion] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [options, setOptions] = useState([]);
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+
 
   useEffect(() => {
     axios.get(apiURL).then((response) => {
       const allContries = response.data;
+
       const sortedData = allContries.sort(function (a, b) {
         var keyA = new Date(a.Day),
           keyB = new Date(b.Day);
@@ -30,9 +29,12 @@ function Chart() {
         if (keyA > keyB) return 1;
         return 0;
       });
+
       setRegion(sortedData);
     });
   }, []);
+
+
 
   const handleChange = (e) => {
     const getCountry = region.filter((el) => {
@@ -42,13 +44,11 @@ function Chart() {
   };
   return (
     <div className="chart">
-      <h3 className="chartTitle">Variant Overview</h3>
+      <h3 className="chartTitle">Variants Overview</h3>
       <select onChange={handleChange}>
-          {region.map((country, i) => (
-            <option key={country._id} value={country.Entity}>
-              {country.Entity}{" "}
-            </option>
-          ))}
+          {Array.from(new Set(region.map(obj => obj.Entity))).map(el => {
+    return <option key={el._id} value={el}>{el}</option>
+})}
         </select>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
@@ -69,14 +69,57 @@ function Chart() {
             <Legend />
             <Line
               type="monotone"
+              dataKey="Omicron"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+            <Line
+              type="monotone"
               dataKey="Delta"
               stroke="#8884d8"
               activeDot={{ r: 8 }}
             />
-            <Line type="monotone" dataKey="Omicron" stroke="#82ca9d" />
+            <Line
+              type="monotone"
+              dataKey="Alpha"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+            <Line
+              type="monotone"
+              dataKey="Beta"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+            <Line
+              type="monotone"
+              dataKey="Gamma"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+            <Line
+              type="monotone"
+              dataKey="Lambda"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+            <Line
+              type="monotone"
+              dataKey="Kappa"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+            <Line
+              type="monotone"
+              dataKey="Mu"
+              stroke="#8884d8"
+              activeDot={{ r: 10 }}
+            />
           </LineChart>
+          
         </ResponsiveContainer>
     </div>
+    
   );
 }
 

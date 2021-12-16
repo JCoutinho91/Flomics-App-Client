@@ -8,18 +8,27 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import DashBoardPage from "./pages/DashBoard/DashBoardPage";
 import AnalysisPage from "./pages/AnalysisPage/AnalysisPage";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
-import IsAnon from "./components/IsAnon/IsAnon";
 import EditProjectPage from "./pages/ProfilePage/EditProfilePage/EditProfilePage";
 import ResultsPage from "./pages/ResultsPage/ResultsPage";
 import RequestsPage from "./pages/RequestsPage/RequestsPage";
-import AdminLogin from "./pages/LoginPage/AdminLogin";
 import AdminDashBoard from "./pages/AdminPages/AdminDashBoard/AdminDashBoard";
 import AdminEditRequests from "./pages/AdminPages/AdminEditRequests/AdminEditRequests";
 import AdminEditSamples from "./pages/AdminPages/AdminEditSamples/AdminEditSamples";
+import VariantData from "./pages/VariantData/VariantData"
+import AlphaPage from "./pages/AlphaPage/AlphaPage"
+import BetaPage from "./pages/BetaPage/BetaPage"
+import DeltaPage from "./pages/DeltaPage/DeltaPage"
+import GammaPage from "./pages/GammaPage/GammaPage"
+import MuPage from "./pages/MuPage/MuPage"
+import OmicronPage from "./pages/OmicronPage/OmicronPage"
+import LambdaPage from "./pages/LambdaPage/LambdaPage"
+import KappaPage from "./pages/KappaPage/KappaPage"
+
+
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
@@ -27,7 +36,8 @@ function App() {
           element={
             <IsPrivate>
               {" "}
-              <DashBoardPage />{" "}
+              <DashBoardPage />
+              {" "}
             </IsPrivate>
           }
         />
@@ -36,7 +46,8 @@ function App() {
           element={
             <IsPrivate>
               {" "}
-              <AdminDashBoard />{" "}
+              <AdminDashBoard />
+              {" "}
             </IsPrivate>
           }
         />
@@ -68,11 +79,94 @@ function App() {
           }
         />
         <Route
+          path="/alpha"
+          element={
+            <IsPrivate>
+              {" "}
+              <AlphaPage />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/beta"
+          element={
+            <IsPrivate>
+              {" "}
+              <BetaPage />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/delta"
+          element={
+            <IsPrivate>
+              {" "}
+              <DeltaPage />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/gamma"
+          element={
+            <IsPrivate>
+              {" "}
+              <GammaPage />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/kappa"
+          element={
+            <IsPrivate>
+              {" "}
+              <KappaPage />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/lambda"
+          element={
+            <IsPrivate>
+              {" "}
+              <LambdaPage />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/mu"
+          element={
+            <IsPrivate>
+              {" "}
+              <MuPage />{" "}
+            </IsPrivate>
+          }
+        />
+         <Route
+          path="/omicron"
+          element={
+            <IsPrivate>
+              {" "}
+              <OmicronPage />{" "}
+            </IsPrivate>
+          }
+        />
+
+        <Route
           path="/results"
           element={
             <IsPrivate>
               {" "}
               <ResultsPage />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/variant"
+          element={
+            <IsPrivate>
+              {" "}
+              <VariantData />
+              {" "}
             </IsPrivate>
           }
         />
@@ -105,7 +199,6 @@ function App() {
         />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>

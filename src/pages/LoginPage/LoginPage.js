@@ -12,7 +12,8 @@ function LoginPage() {
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   // Get the function for saving and verifying the token
-  const { logInUser } = useContext(AuthContext);
+  const { logInUser, user } = useContext(AuthContext);
+  console.log(user)
 
   const navigate = useNavigate();
 
@@ -37,8 +38,11 @@ function LoginPage() {
       // Save the token and set the user as logged in ...
       const token = response.data.authToken;
       logInUser(token);
-
+      if(user.role === "user"){
       navigate("/dashboard");
+      }else{
+        navigate("/admindashboard")
+      }
     } catch (error) {
       // If the request resolves with an error, set the error message in the state
       setErrorMessage("Something went wrong");

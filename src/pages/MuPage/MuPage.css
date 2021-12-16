@@ -1,0 +1,8 @@
+.dashboard {
+    display: flex;
+  }
+  
+  .home{
+    flex:4;
+  }
+  

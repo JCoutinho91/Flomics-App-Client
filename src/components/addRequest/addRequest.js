@@ -42,7 +42,7 @@ function AddRequest({ refreshList }) {
 
   return (
     <div className="AddProject">
-      <h3>Add a Project</h3>
+      <h3>New Request</h3>
 
       <form onSubmit={handleSubmit}>
         <label>Name</label>

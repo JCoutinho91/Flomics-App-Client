@@ -29,7 +29,9 @@
     position: relative;
     cursor: pointer;
     margin-right: 15px;
-    color: blue;
+    color: black;
+    font-weight:600;
+    
   }
   
   .topIconBag {
