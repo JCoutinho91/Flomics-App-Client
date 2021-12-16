@@ -7,7 +7,7 @@ import { DataGrid } from "@material-ui/data-grid";
 import FeaturedInfo from "../../components/FeaturedInfo/FeaturedInfo"
 import AddRequest from "../../components/addRequest/addRequest"
 
-const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005/api/users/current";
+const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
 
 
 function RequestsPage(props) {
