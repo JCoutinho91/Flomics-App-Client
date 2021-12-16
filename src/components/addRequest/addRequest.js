@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useContext } from "react/cjs/react.development";
 import { AuthContext } from "../../context/auth.context";
+const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005/api/request/new";
 
 function AddRequest({ refreshList }) {
   const { user } = useContext(AuthContext);
@@ -27,7 +28,7 @@ function AddRequest({ refreshList }) {
         observations,
         userIdentify: user._id,
       };
-      await axios.post("http://localhost:5005/api/request/new", requestBody);
+      await axios.post(`${API_URL}/api/request/new`, requestBody);
 
       // Clear the form
       setName("");

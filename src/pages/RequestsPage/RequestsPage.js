@@ -5,6 +5,8 @@ import TopBar from "../../components/TopBar/TopBar"
 import SideBar from "../../components/SideBar/SideBar"
 import { DataGrid } from "@material-ui/data-grid";
 import FeaturedInfo from "../../components/FeaturedInfo/FeaturedInfo"
+import AddRequest from "../../components/addRequest/addRequest"
+
 const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005/api/users/current";
 
 
@@ -67,6 +69,7 @@ const columns = [
         pageSize={5}
         checkboxSelection
       />
+      <AddRequest/>
       </div>
     </div>
     </>
