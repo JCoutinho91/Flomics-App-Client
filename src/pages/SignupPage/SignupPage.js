@@ -7,6 +7,8 @@ function SignupPage(props) {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
+  const authUrl = process.env.REACT_APP_SERVER_URL || "http://localhost:5005/auth/login"
+
 
   const navigate = useNavigate();
 
@@ -21,7 +23,7 @@ function SignupPage(props) {
       const requestBody = { email, password, name };
 
       const authToken = localStorage.getItem("authToken");
-      await axios.post("http://localhost:5005/auth/signup", requestBody, {
+      await axios.post(`${authUrl}/auth/signup`, requestBody, {
         headers: { Authorization: `Bearer ${authToken}` },
       });
 
