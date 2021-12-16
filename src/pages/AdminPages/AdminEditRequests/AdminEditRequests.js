@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import EditRequest from "../../../components/editRequest/editRequest";
 const urlRequests = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
-const urlDelete =  process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
 
 function AdminEditRequests() {
   const [request, setRequest] = useState(null);
@@ -16,7 +15,7 @@ function AdminEditRequests() {
   const handleDelete = async (requestId) => {
     try {
       const authToken = localStorage.getItem("authToken");
-      await axios.delete( `${urlDelete}/api/requests/` + requestId,
+      await axios.delete( `${urlRequests}/api/requests/` + requestId,
         {
           headers: {
             Authorization: `Bearer ${authToken}`,
