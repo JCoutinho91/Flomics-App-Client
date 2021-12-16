@@ -11,7 +11,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-const apiURL = "http://localhost:5005/api/variant";
+const apiURL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005/api/variant";
 
 function Chart() {
   const [region, setRegion] = useState([]);
@@ -19,7 +19,7 @@ function Chart() {
 
 
   useEffect(() => {
-    axios.get(apiURL).then((response) => {
+    axios.get(`${apiURL}/api/variant`).then((response) => {
       const allContries = response.data;
 
       const sortedData = allContries.sort(function (a, b) {

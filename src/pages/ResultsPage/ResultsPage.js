@@ -5,7 +5,7 @@ import TopBar from "../../components/TopBar/TopBar"
 import SideBar from "../../components/SideBar/SideBar"
 import { DataGrid } from "@material-ui/data-grid";
 import FeaturedInfo from "../../components/FeaturedInfo/FeaturedInfo"
-const API_URL = "http://localhost:5005/api/users/current";
+const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005/api/users/current";
 
 
 function ResultsPage(props) {
@@ -78,7 +78,7 @@ const columns = [
       try {
         const storedToken = localStorage.getItem("authToken");
         if (storedToken) {
-          const response = await axios.get(API_URL, {
+          const response = await axios.get(`${API_URL}/api/users/current`, {
             headers: { Authorization: `Bearer ${storedToken}` },
           });
           const currentUser = response.data;

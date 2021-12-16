@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 import authService from "../../services/auth.service";
+const authUrl = process.env.REACT_APP_SERVER_URL || "http://localhost:5005/auth/login"
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -24,9 +25,7 @@ function LoginPage() {
       const requestBody = { email, password };
 
       const authToken = localStorage.getItem("authToken");
-      const response = await axios.post(
-        "http://localhost:5005/auth/login",
-        requestBody,
+      const response = await axios.post(`${authUrl}/auth/login`,requestBody,
         { headers: { Authorization: `Bearer ${authToken}` } }
       );
 
