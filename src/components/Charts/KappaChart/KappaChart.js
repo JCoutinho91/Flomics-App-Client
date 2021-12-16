@@ -19,7 +19,7 @@ function KappaChart() {
 
 
   useEffect(() => {
-    axios.get(`${apiURL}`/api/variant).then((response) => {
+    axios.get(`${apiURL}/api/variant`).then((response) => {
       const allContries = response.data;
 
       const sortedData = allContries.sort(function (a, b) {
