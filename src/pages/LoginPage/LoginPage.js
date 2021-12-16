@@ -1,17 +1,10 @@
-// src/pages/LoginPage.js
-
 import axios from "axios";
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
-<<<<<<< HEAD
-
-function LoginPage(props) {
-=======
 import authService from "../../services/auth.service";
 
 function LoginPage() {
->>>>>>> develop
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
