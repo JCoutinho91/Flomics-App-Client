@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+const urlVerify = REACT_APP_SERVER_URL || http://localhost:5005/auth/verify
 const AuthContext = createContext();
 
 function AuthProviderWrapper({ children }) {
@@ -16,7 +16,7 @@ function AuthProviderWrapper({ children }) {
       const storedToken = localStorage.getItem("authToken");
 
       if (storedToken) {
-        const response = await axios.get("http://localhost:5005/auth/verify", {
+        const response = await axios.get(`${urlVerify}/auth/verify`, {
           headers: { Authorization: `Bearer ${storedToken}` },
         });
 
