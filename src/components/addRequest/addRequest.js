@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useContext } from "react/cjs/react.development";
+import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
 
