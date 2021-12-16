@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 import { useParams } from "react-router-dom";
-const requestUrl = "http://localhost:5005/api/requests/";
+const requestUrl = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
 
 function EditRequest() {
   const [status, setStatus] = useState("");
@@ -26,7 +26,7 @@ function EditRequest() {
         variant,
         observations,
       };
-      await axios.put(requestUrl + requestId, requestBody);
+      await axios.put(`${requestUrl}/api/requests/` + requestId, requestBody);
 
       // Clear the form
       setStatus("");

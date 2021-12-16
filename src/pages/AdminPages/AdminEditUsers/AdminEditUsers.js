@@ -1,21 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-
+import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-const requestUrl =  process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
+const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
+const createResult = process.env.REACT_APP_SERVER_URL
 
-function EditSamples() {
-  const [beta, setBeta] = useState(undefined);
-  const [gamma, setGamma] = useState(undefined);
-  const [kappa, setKappa] = useState(undefined);
-  const [delta, setDelta] = useState(undefined);
-  const [alpha, setAlpha] = useState(undefined);
-  const [lambda, setLambda] = useState(undefined);
-  const [mu, setMu] = useState(undefined);
-  const [omicron, setOmicron] = useState(undefined);
 
-  const { sampleId } = useParams();
+function AdminEditUsers(props) {
+  const [sampleId,setSampleId] = useState("");
+  const [company, setCompany] = useState("");
+  const [date, setDate] = useState("")
+  const [beta, setBeta] = useState(0);
+  const [gamma, setGamma] = useState(0);
+  const [kappa, setKappa] = useState(0);
+  const [delta, setDelta] = useState(0);
+  const [alpha, setAlpha] = useState(0);
+  const [lambda, setLambda] = useState(0);
+  const [mu, setMu] = useState(0);
+  const [omicron, setOmicron] = useState(0);
+  const [userIdentify, setUserIdentify] = useState("");
 
+  const { userId } = useParams();
+
+  const handleSampleId = (e) => setSampleId(e.target.value);
+  const handleCompany = (e) => setCompany(e.target.value);
+  const handleDate = (e) => setDate(e.target.value);
   const handleBeta = (e) => setBeta(e.target.value);
   const handleGamma = (e) => setGamma(e.target.value);
   const handleKappa = (e) => setKappa(e.target.value);
@@ -30,17 +39,23 @@ function EditSamples() {
       e.preventDefault();
 
       const requestBody = {
-        beta,
-        gamma,
-        kappa,
-        delta,
-        alpha,
-        lambda,
-        mu,
-        omicron,
+         sampleId,
+         company,
+         date,
+         Beta : beta,
+         Gamma: gamma,
+         Kappa: kappa,
+         Delta: delta,
+         Alpha: alpha,
+         Lambda: lambda,
+         Mu: mu,
+         Omicron: omicron,
+         userIdentify: userId
       };
-      await axios.put(`${requestUrl}/api/results/` + sampleId, requestBody);
-
+      await axios.post(`${API_URL}/api/results/new` , requestBody);
+      setSampleId("")
+      setCompany("")
+      setDate("")
       setBeta(0);
       setGamma(0);
       setKappa(0);
@@ -54,12 +69,34 @@ function EditSamples() {
     }
   };
 
-  return (
+
+ return (
     <div>
       <h3>Edit Delta</h3>
       <form onSubmit={handleSubmit}>
+        <label>Edit Sample Id</label>
+        <input name="sampleId" type="number" value={sampleId} onChange={handleSampleId} />
+        <label>Edit Company</label>
+        <input
+          name="company"
+          type="text"
+          value={company}
+          onChange={handleCompany}
+        />
+        <label>Edit Date</label>
+        <input
+          name="date"
+          type="text"
+          value={date}
+          onChange={handleDate}
+        />
         <label>Edit Beta</label>
-        <input name="beta" type="number" value={beta} onChange={handleBeta} />
+        <input
+          name="beta"
+          type="text"
+          value={beta}
+          onChange={handleGamma}
+        />
         <label>Edit Gamma</label>
         <input
           name="gamma"
@@ -111,4 +148,7 @@ function EditSamples() {
   );
 }
 
-export default EditSamples;
+export default AdminEditUsers;
+
+
+

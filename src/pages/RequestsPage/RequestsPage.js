@@ -32,6 +32,20 @@ const columns = [
     description: "observations"
   },
 ]
+const refreshList = async () => {
+  const storedToken = localStorage.getItem("authToken");
+  const response = await axios.get(`${API_URL}/api/users/current`, {
+            headers: { Authorization: `Bearer ${storedToken}` },
+          });
+          const currentUser = response.data;
+          const currentUserRequests = currentUser.requests;
+          const rowsWithId = currentUserRequests.map((row) => {
+          const { _id, ...rest } = row;
+          return { id: _id, ...rest };
+            });
+          setuserRequests(rowsWithId);
+}
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -69,9 +83,11 @@ const columns = [
         pageSize={5}
         checkboxSelection
       />
+      <AddRequest refreshList={refreshList}/>
       </div>
-      <AddRequest/>
     </div>
+    <div className="add">
+      </div>
     </>
   );
 }

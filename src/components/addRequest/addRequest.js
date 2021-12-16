@@ -2,11 +2,10 @@ import { useState } from "react";
 import axios from "axios";
 import { useContext } from "react/cjs/react.development";
 import { AuthContext } from "../../context/auth.context";
-const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005/api/request/new";
+const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
 
 function AddRequest({ refreshList }) {
   const { user } = useContext(AuthContext);
-  console.log(user);
   const [name, setName] = useState("");
   const [size, setSize] = useState(1);
   const [variant, setVariant] = useState("");
@@ -28,7 +27,10 @@ function AddRequest({ refreshList }) {
         observations,
         userIdentify: user._id,
       };
-      await axios.post(`${API_URL}/api/request/new`, requestBody);
+      const authToken = localStorage.getItem("authToken");
+      await axios.post(`${API_URL}/api/request/new`, requestBody, {
+        headers: { Authorization: `Bearer ${authToken}` },
+      });
 
       // Clear the form
       setName("");
@@ -57,7 +59,7 @@ function AddRequest({ refreshList }) {
           value={variant}
           onChange={handleVariant}
         />
-        <label>Description</label>
+        <label>Observations</label>
         <input
           name="observations"
           type="text"

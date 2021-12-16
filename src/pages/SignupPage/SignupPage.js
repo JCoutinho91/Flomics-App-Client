@@ -7,7 +7,7 @@ function SignupPage(props) {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
-  const authUrl = process.env.REACT_APP_SERVER_URL || "http://localhost:5005/auth/login"
+  const authUrl = process.env.REACT_APP_SERVER_URL || "http://localhost:5005"
 
 
   const navigate = useNavigate();

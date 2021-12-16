@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-const urlVerify = process.env.REACT_APP_SERVER_URL || "http://localhost:5005/auth/verify";
+const urlVerify = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
 const AuthContext = createContext();
 
 function AuthProviderWrapper({ children }) {

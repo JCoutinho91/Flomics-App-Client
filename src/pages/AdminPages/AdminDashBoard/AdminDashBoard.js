@@ -2,9 +2,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import TopBar from "../../../components/TopBar/TopBar";
-const urlRequests = "http://localhost:5005/api/requests";
-const urlSamples = "http://localhost:5005/api/results";
-const urlUsers = "http://localhost:5005/api/users";
+const urlRequests = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
+const urlSamples = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
+const urlUsers = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
 
 function AdminDashBoard() {
   const [userRequests, setUserRequests] = useState([]);
@@ -13,19 +13,19 @@ function AdminDashBoard() {
 
   useEffect(() => {
     const fetchData = async () => {
-      axios.get(urlRequests).then((response) => {
+      axios.get(`${urlRequests}/api/requests`).then((response) => {
         const requestsData = response.data;
         console.log(requestsData)
 
         setUserRequests(requestsData);
       });
-      axios.get(urlSamples).then((response) => {
+      axios.get(`${urlRequests}/api/results`).then((response) => {
         const samplesData = response.data;
         setUserSamples(samplesData);
       });
       const storedToken = localStorage.getItem("authToken");
       if (storedToken) {
-        const response = await axios.get(urlUsers, {
+        const response = await axios.get(`${urlUsers}/api/users`, {
           headers: { Authorization: `Bearer ${storedToken}` },
         });
         const allUsers = response.data;
@@ -90,12 +90,9 @@ function AdminDashBoard() {
           <>
             <button>
               {" "}
-              <Link to={`/admindashboard/samples/${el._id}`}>Edit</Link>
+              <Link to={`/admindashboard/users/${el._id}`}>Add Results to User</Link>
             </button>
             <li>Sample ID : {el.email}</li>
-            <li>
-              Company : <img src={el.image} alt="userphoto" />
-            </li>
             <li>Date : {el.name}</li>
             <br />
             <br />

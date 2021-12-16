@@ -23,6 +23,7 @@ import MuPage from "./pages/MuPage/MuPage"
 import OmicronPage from "./pages/OmicronPage/OmicronPage"
 import LambdaPage from "./pages/LambdaPage/LambdaPage"
 import KappaPage from "./pages/KappaPage/KappaPage"
+import AdminEditUsers from "./pages/AdminPages/AdminEditUsers/AdminEditUsers"
 
 
 
@@ -66,6 +67,14 @@ function App() {
             <IsPrivate>
               {" "}
               <AdminEditSamples />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/admindashboard/users/:userId"
+          element={
+            <IsPrivate>
+              <AdminEditUsers />{" "}
             </IsPrivate>
           }
         />

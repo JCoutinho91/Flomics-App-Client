@@ -14,6 +14,7 @@ function AdminEditSamples() {
       setSample(currentSample);
     });
   }, []);
+  
   return (
     <div>
       {sample && (
