@@ -1,6 +1,6 @@
 import Hero from "../../components/Hero/Hero";
 import "./HomePage.css";
-import heroImg from "../../assests/Homeimg.jpg";
+import heroImg from "../../assests/bgimg.png";
 import Slider from "../../components/Slider/Slider";
 import sliderImg from "../../assests/Homeimg2.jpg";
 import sliderImg2 from "../../assests/Homeimg3.jpg";

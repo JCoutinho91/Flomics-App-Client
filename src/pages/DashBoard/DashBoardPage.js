@@ -1,4 +1,5 @@
 import "./DashBoard.css";
+<<<<<<< HEAD
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -14,10 +15,16 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+=======
+import Chart from "../../components/Charts/Chart"
+import TopBar from "../../components/TopBar/TopBar"
+import SideBar from "../../components/SideBar/SideBar"
+import FeaturedInfo from "../../components/FeaturedInfo/FeaturedInfo"
+>>>>>>> develop
 
-const apiURL = "http://localhost:5005/api/variant";
 
 function DashBoardPage() {
+<<<<<<< HEAD
   const [region, setRegion] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
   // const [options, setOptions] = useState([]);
@@ -48,75 +55,19 @@ function DashBoardPage() {
   //  return setOptions(el.Entity);
   // });
 
+=======
+
+>>>>>>> develop
   return (
-    <div className="dashboard">
-      <h1>This is the dashboard</h1>
-      {isLoggedIn && (
-        <>
-          <button onClick={logOutUser}>Logout</button>
-        </>
-      )}
-      <Link to="/profile">
-        <button>Your Profile</button>
-      </Link>
-      <Link to="/analysis">
-        <button>Analysis</button>
-      </Link>
-      <Link to="/results">
-        <button>Results</button>
-      </Link>
-      <Link to="/requests">
-        <button>Requests</button>
-      </Link>
-
-      <div className="chart">
-        <select onChange={handleChange}>
-          {region.map((country, i) => (
-            <option key={country._id} value={country.Entity}>
-              {country.Entity}{" "}
-            </option>
-          ))}
-        </select>
-
-        {/*}
-        <div className="SelectReactExample">
-          <Select
-            value={region}
-            onChange={onchangeSelect}
-            options={options}
-            getOptionValue={(entity) => region.Entity}
-            getOptionLabel={(entity) => region.Entity}
-          />
-        </div>
-*/}
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart
-            width={500}
-            height={300}
-            data={selectedOption}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="Day" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line
-              type="monotone"
-              dataKey="Delta"
-              stroke="#8884d8"
-              activeDot={{ r: 8 }}
-            />
-            <Line type="monotone" dataKey="Omicron" stroke="#82ca9d" />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
+    <>
+    <TopBar/>
+<div className="dashboard">
+    <SideBar/>
+    <div className="home">
+      <Chart/>
     </div>
-  );
+</div>
+    </>
+    )
 }
 export default DashBoardPage;

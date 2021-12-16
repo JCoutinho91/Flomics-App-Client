@@ -4,14 +4,21 @@ import axios from "axios";
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
+<<<<<<< HEAD
 
 function LoginPage(props) {
+=======
+import authService from "../../services/auth.service";
+
+function LoginPage() {
+>>>>>>> develop
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   // Get the function for saving and verifying the token
-  const { logInUser } = useContext(AuthContext);
+  const { logInUser, user } = useContext(AuthContext);
+  console.log(user)
 
   const navigate = useNavigate();
 
@@ -36,8 +43,11 @@ function LoginPage(props) {
       // Save the token and set the user as logged in ...
       const token = response.data.authToken;
       logInUser(token);
-
+      if(user.role === "user"){
       navigate("/dashboard");
+      }else{
+        navigate("/admindashboard")
+      }
     } catch (error) {
       // If the request resolves with an error, set the error message in the state
       setErrorMessage("Something went wrong");
