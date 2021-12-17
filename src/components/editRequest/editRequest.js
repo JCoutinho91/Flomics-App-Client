@@ -66,7 +66,7 @@ function EditRequest() {
           onChange={handleObser}
         />
 
-        <button type="submit">Add Request</button>
+        <button type="submit">Update Request</button>
       </form>
     </div>
   );

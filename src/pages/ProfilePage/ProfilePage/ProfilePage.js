@@ -55,7 +55,7 @@ const navigate = useNavigate();
 
       setEmail("");
       setName("");
-      navigate("-1");
+      navigate("/dashboard");
     } catch (error) {}
   };
 

@@ -1,6 +1,7 @@
 import "./TopBar.css";
 import { Link } from "react-router-dom";
 import companyLogo from "../../assests/flologo.png";
+import mockcompany from "../../assests/companylogo.jpg"
 import { Settings, Chat, Notifications  } from "@material-ui/icons";
 import {useState, useEffect} from "react"
 import axios from "axios"
@@ -48,7 +49,7 @@ function TopBar() {
           <div className="topbarIconContainer">
             Welcome! {name}
           </div>
-          <Link to="/profile"><img src={image} alt="userimg" className="topavatar" /></Link>
+          <Link to="/profile"><img src={mockcompany} alt="userimg" className="topavatar" /></Link>
         </div>
       </div>
     </div>

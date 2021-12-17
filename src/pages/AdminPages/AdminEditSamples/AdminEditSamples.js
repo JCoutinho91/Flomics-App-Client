@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import EditSamples from "../../../components/editSamples/editSamples";
 import "./AdminEditSamples.css"
 const urlRequests = "http://localhost:5005/api/results/";
