@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import "./editRequest.css"
 
 import { useParams } from "react-router-dom";
 const requestUrl = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
@@ -38,9 +39,9 @@ function EditRequest() {
   };
 
   return (
-    <div>
-      <h3>Edit Request</h3>
+    <div className="EditRequests">
       <form onSubmit={handleSubmit}>
+      <h3>Edit Request</h3>
         <label>Status</label>
         <input
           name="status"
@@ -48,6 +49,7 @@ function EditRequest() {
           value={status}
           onChange={handleStatus}
         />
+        <br/>
         <label>Variant</label>
         <input
           name="variant"
@@ -55,6 +57,7 @@ function EditRequest() {
           value={variant}
           onChange={handleVariant}
         />
+        <br/>
         <label>Observations</label>
         <input
           name="observations"

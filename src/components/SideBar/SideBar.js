@@ -80,10 +80,7 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Your Lab</h3>
           <ul className="sidebarList">
-            <li className="sidebarListItem">
-              <ChatBubbleOutline className="sidebarIcon" />
-              Charts
-            </li>
+            
             <Link to="/results">
             <li className="sidebarListItem">
               <TrendingUp className="sidebarIcon" />
@@ -99,13 +96,9 @@ export default function Sidebar() {
           </ul>
         </div>
         <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Data</h3>
           <ul className="sidebarList">
             <Link to="/variant" className="link">
-              <li className="sidebarListItem">
-                <PermIdentity className="sidebarIcon" />
-                Variants Data
-              </li>
+        
             </Link>
 
           </ul>

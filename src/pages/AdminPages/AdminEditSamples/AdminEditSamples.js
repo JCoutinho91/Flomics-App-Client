@@ -2,6 +2,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react/cjs/react.development";
 import EditSamples from "../../../components/editSamples/editSamples";
+import "./AdminEditSamples.css"
 const urlRequests = "http://localhost:5005/api/results/";
 
 function AdminEditSamples() {
@@ -14,24 +15,8 @@ function AdminEditSamples() {
       setSample(currentSample);
     });
   }, []);
-  
   return (
-    <div>
-      {sample && (
-        <>
-          <h1>{sample.sampleId}</h1>
-          <p>{sample.company}</p>
-          <p>{sample.date}</p>
-          <p>{sample.Beta}</p>
-          <p>{sample.Gamma}</p>
-          <p>{sample.Kappa}</p>
-          <p>{sample.Delta}</p>
-          <p>{sample.Alpha}</p>
-          <p>{sample.Lambda}</p>
-          <p>{sample.Mu}</p>
-          <p>{sample.Omicron}</p>
-        </>
-      )}
+    <div className="samplesDiv">
       <EditSamples />
     </div>
   );

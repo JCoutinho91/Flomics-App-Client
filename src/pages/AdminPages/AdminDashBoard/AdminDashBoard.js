@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import TopBar from "../../../components/TopBar/TopBar";
+import "./AdminDashBoard.css"
 const urlRequests = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
 const urlSamples = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
 const urlUsers = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
@@ -37,71 +38,78 @@ function AdminDashBoard() {
   }, []);
 
   return (
-    <div>
+    <>
     <TopBar/>
-      <h1>User Requests:</h1>
-      <br />
+    <div className="AdminList">
+      <div className="Requests">
       <ul>
+      <h2>Requests:</h2>
+      <br/>
         {userRequests.map((el) => (
-          <>
-            <button>
-              {" "}
+          <div className="requestitem">
+            <li><b>Company : </b>{el.name}</li>
+            <li><b>Sample Size : </b>{el.size}</li>
+            <li><b>Status : </b>{el.status}</li>
+            <li><b>Variants : </b>{el.variants}</li>
+            <li><b>Observations :</b> {el.observations}</li>
+            <br/>
+            <button className="editbtn">
               <Link to={`/admindashboard/requests/${el._id}`}>Edit</Link>
             </button>
-            <li>Name of Company : {el.name}</li>
-            <li>Size of Sample : {el.size}</li>
-            <li>Status : {el.status}</li>
-            <li>Variants : {el.variants}</li>
-            <li>Observations : {el.observations}</li>
-            <br />
-            <br />
-            <br />
-          </>
+            </div>
         ))}
       </ul>
-      <hr />
-      <h1>User Samples:</h1>
+      </div>
+      <div className="Samples">
       <ul>
+      <h2>Samples:</h2>
+      <br/>
         {userSamples.map((el) => (
           <>
-            <button>
+            <li><b>Sample ID : </b>{el.sampleId}</li>
+            <li><b>Company : </b>{el.company}</li>
+            <li><b>Date : </b>{el.date}</li>
+            <li><b>Beta : </b>{el.Beta}</li>
+            <li><b>Gamma : </b>{el.Gamma}</li>
+            <li><b>Kappa : </b>{el.Kappa}</li>
+            <li><b>Delta : </b>{el.Delta}</li>
+            <li><b>Alpha : </b>{el.Alpha}</li>
+            <li><b>Lambda : </b>{el.Lambda}</li>
+            <li><b>Mu : </b>{el.Mu}</li>
+            <li><b>Omicron :</b> {el.Omicron}</li>
+            <br />
+            <button className="editbtn">>
               {" "}
               <Link to={`/admindashboard/samples/${el._id}`}>Edit</Link>
             </button>
-            <li>Sample ID : {el.sampleId}</li>
-            <li>Company : {el.company}</li>
-            <li>Date : {el.date}</li>
-            <li>Beta : {el.Beta}</li>
-            <li>Gamma : {el.Gamma}</li>
-            <li>Kappa : {el.Kappa}</li>
-            <li>Delta : {el.Delta}</li>
-            <li>Alpha : {el.Alpha}</li>
-            <li>Lambda : {el.Lambda}</li>
-            <li>Mu : {el.Mu}</li>
-            <li>Omicron : {el.Omicron}</li>
-            <br />
-            <br />
-            <br />
           </>
         ))}
       </ul>
+      </div>
+      <div className="userdata">
       <ul>
+       <h2>Users:</h2>
+       <br/>
         {users.map((el) => (
           <>
-            <button>
+            <li><b>Username :</b> {el.name}</li>
+            <br/>
+            <li><b>Email Contact :</b> {el.email}</li>
+            <br/>
+            <button className="editbtn">
               {" "}
               <Link to={`/admindashboard/users/${el._id}`}>Add Results to User</Link>
             </button>
-            <li>Sample ID : {el.email}</li>
-            <li>Date : {el.name}</li>
-            <br />
-            <br />
             <br />
           </>
         ))}
       </ul>
-    </div>
-  );
+      </div>
+      </div>
+      </>
+
+
+  )
 }
 
 export default AdminDashBoard;

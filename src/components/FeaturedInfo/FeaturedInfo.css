@@ -19,6 +19,8 @@
   }
   
   .featuredMoneyContainer{
+      justify-content:center;
+      margin-left:70px;
       margin: 10px 0px;
       display: flex;
       align-items: center;

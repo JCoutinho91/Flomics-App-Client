@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "./AdminEditUsers.css"
 import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
@@ -71,9 +72,9 @@ function AdminEditUsers(props) {
 
 
  return (
-    <div>
+    <div className="editUsers">
       <h3>Edit Delta</h3>
-      <form onSubmit={handleSubmit}>
+      <form className="usersForm" onSubmit={handleSubmit}>
         <label>Edit Sample Id</label>
         <input name="sampleId" type="number" value={sampleId} onChange={handleSampleId} />
         <label>Edit Company</label>
@@ -142,9 +143,10 @@ function AdminEditUsers(props) {
           onChange={handleOmicron}
         />
 
-        <button type="submit">Edit Sample</button>
+        <button type="submit">Edit Users Results</button>
       </form>
-    </div>
+      </div>
+    
   );
 }
 

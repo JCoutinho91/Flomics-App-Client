@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-
+import "./editSamples.css"
 import { useParams } from "react-router-dom";
 const requestUrl =  process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
 
@@ -55,9 +55,9 @@ function EditSamples() {
   };
 
   return (
-    <div>
+    <div className="editSamples">
       <h3>Edit Delta</h3>
-      <form onSubmit={handleSubmit}>
+      <form classname="formsamples" onSubmit={handleSubmit}>
         <label>Edit Beta</label>
         <input name="beta" type="number" value={beta} onChange={handleBeta} />
         <label>Edit Gamma</label>
