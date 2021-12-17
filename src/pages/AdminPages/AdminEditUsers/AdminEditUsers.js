@@ -23,6 +23,8 @@ function AdminEditUsers(props) {
 
   const { userId } = useParams();
 
+    const navigate = useNavigate();
+
   const handleSampleId = (e) => setSampleId(e.target.value);
   const handleCompany = (e) => setCompany(e.target.value);
   const handleDate = (e) => setDate(e.target.value);
@@ -144,6 +146,13 @@ function AdminEditUsers(props) {
         />
 
         <button type="submit">Edit Users Results</button>
+         <button
+        onClick={() => {
+          navigate("/admindashboard");
+        }}
+      >
+        Back
+      </button>
       </form>
       </div>
     

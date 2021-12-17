@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./editSamples.css"
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 const requestUrl =  process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
 
@@ -15,6 +16,8 @@ function EditSamples() {
   const [omicron, setOmicron] = useState(undefined);
 
   const { sampleId } = useParams();
+
+    const navigate = useNavigate()
 
   const handleBeta = (e) => setBeta(e.target.value);
   const handleGamma = (e) => setGamma(e.target.value);
@@ -106,6 +109,13 @@ function EditSamples() {
         />
 
         <button type="submit">Edit Sample</button>
+         <button
+        onClick={() => {
+          navigate("/admindashboard");
+        }}
+      >
+        Back
+      </button>
       </form>
     </div>
   );

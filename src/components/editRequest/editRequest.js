@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./editRequest.css"
-
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 const requestUrl = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
 
@@ -9,6 +9,8 @@ function EditRequest() {
   const [status, setStatus] = useState("");
   const [variant, setVariant] = useState("");
   const [observations, setObservations] = useState("");
+
+  const navigate = useNavigate()
 
   const { requestId } = useParams();
 
@@ -24,7 +26,7 @@ function EditRequest() {
 
       const requestBody = {
         status,
-        variant,
+        variants: variant,
         observations,
       };
       await axios.put(`${requestUrl}/api/requests/` + requestId, requestBody);
@@ -33,6 +35,7 @@ function EditRequest() {
       setStatus("");
       setVariant("");
       setObservations("");
+      
     } catch (error) {
       console.log(error);
     }
@@ -67,6 +70,13 @@ function EditRequest() {
         />
 
         <button type="submit">Update Request</button>
+         <button
+        onClick={() => {
+          navigate("/admindashboard");
+        }}
+      >
+        Back
+      </button>
       </form>
     </div>
   );
