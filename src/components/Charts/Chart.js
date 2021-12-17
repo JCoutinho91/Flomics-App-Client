@@ -70,19 +70,19 @@ function Chart() {
             <Line
               type="monotone"
               dataKey="Omicron"
-              stroke="#8884d8"
+              stroke="#9c528b"
               activeDot={{ r: 8 }}
             />
             <Line
               type="monotone"
               dataKey="Delta"
-              stroke="#8884d8"
+              stroke="#f18805"
               activeDot={{ r: 8 }}
             />
             <Line
               type="monotone"
               dataKey="Alpha"
-              stroke="#8884d8"
+              stroke="#00171f"
               activeDot={{ r: 8 }}
             />
             <Line
@@ -94,25 +94,25 @@ function Chart() {
             <Line
               type="monotone"
               dataKey="Gamma"
-              stroke="#8884d8"
+              stroke="#007ea7"
               activeDot={{ r: 8 }}
             />
             <Line
               type="monotone"
               dataKey="Lambda"
-              stroke="#8884d8"
+              stroke="#412722"
               activeDot={{ r: 8 }}
             />
             <Line
               type="monotone"
               dataKey="Kappa"
-              stroke="#8884d8"
+              stroke="#6b0f1a"
               activeDot={{ r: 8 }}
             />
             <Line
               type="monotone"
               dataKey="Mu"
-              stroke="#8884d8"
+              stroke="#d1d646"
               activeDot={{ r: 10 }}
             />
           </LineChart>

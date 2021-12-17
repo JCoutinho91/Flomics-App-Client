@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 const navbarLinks = [
   { url: "/login", title: "Login" },
   { url: "/signup", title: "Sign Up" },
-  { url: "/learn", title: "Learn More" },
-  { url: "/adminlogin", title: "Admin" },
 ];
 
 const Navbar = ({ logoimg }) => {
