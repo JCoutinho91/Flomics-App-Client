@@ -78,7 +78,7 @@ function AdminEditUsers(props) {
       <h3>Edit Delta</h3>
       <form className="usersForm" onSubmit={handleSubmit}>
         <label>Edit Sample Id</label>
-        <input name="sampleId" type="number" value={sampleId} onChange={handleSampleId} />
+        <input name="sampleId" type="text" value={sampleId} onChange={handleSampleId} />
         <label>Edit Company</label>
         <input
           name="company"
@@ -96,7 +96,7 @@ function AdminEditUsers(props) {
         <label>Edit Beta</label>
         <input
           name="beta"
-          type="text"
+          type="number"
           value={beta}
           onChange={handleGamma}
         />
