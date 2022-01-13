@@ -16,10 +16,11 @@ p{
 
 .img_container{
   padding-top: 10px;
+  text-align: center;
 }
 .logo_img{
-  height: 75px;
-  width: 300px;
+  height: 60px;
+  width: 270px;
 }
 
 .projectAboutus{
@@ -74,7 +75,7 @@ p{
 }
 
 .hero_section{
-  margin: 0;
+  height: 650px;
 }
 
 .video_player{
@@ -91,13 +92,14 @@ p{
   top: 40%;
 left:50%;
 transform: translateX(-50%);
+text-align: center;
 }
 
 .info_Title{
   font-size: 40px;
-
  color:#00AEEF;
 }
+
 .info_subtitle{
   font-size: 40px;
   color:white;
@@ -126,22 +128,27 @@ transform: translateX(-50%);
   display: flex;
   flex-direction: row;
   z-index: 20;
-  justify-content: space-evenly
-  
+  justify-content: space-evenly;
+  position: relative;
+  top: -75px;
 }
 
 .Info{
-  background-color: white;
-  border:1px solid black;
+  background-color: #00AEEF;
+  border: none;
   border-radius: 5px;
   color: black;
+  text-align: center;
+  padding: 12px 24px;
 }
 
 .FeaturedTitle{
-
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 
 .headline{
-  
+
 }

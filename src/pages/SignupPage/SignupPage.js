@@ -2,8 +2,6 @@ import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import authService from "../../services/auth.service";
-
 function SignupPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +17,7 @@ function SignupPage(props) {
   const handleSignupSubmit = async (e) => {
     try {
       e.preventDefault();
-      // Create an object representing the request body
+
       const requestBody = { email, password, name };
 
       const authToken = localStorage.getItem('authToken');
@@ -29,14 +27,8 @@ function SignupPage(props) {
         { headers: { Authorization: `Bearer ${authToken}`} }
       )
 
-      // or with a service
-      // await authService.signup(requestBody);
-
-      
-      // If the request is successful navigate to login page
       navigate("/login");
     } catch (error) {
-      // If the request resolves with an error, set the error message in the state
       setErrorMessage("Something went wrong");
     }
   };

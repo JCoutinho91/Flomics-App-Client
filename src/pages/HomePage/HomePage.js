@@ -2,9 +2,25 @@ import { Link } from "react-router-dom";
 import "./HomePage.css";
 import logo from "./../../assests/flologo.png"
 import herovideo from "./../../assests/video.mp4"
+import Modal from "../../components/Modal/Modal";
+import { useState } from "react";
+import SignupPage from "../SignupPage/SignupPage";
+import LoginPage from "../LoginPage/LoginPage";
 
 
 function HomePage() {
+const [isLoginOpen, setisLoginOpen] = useState(false)
+const [isSignUpOpen, setisSignUpOpen] = useState(false)
+
+
+const handleLoginPopUp = () => {
+  setisLoginOpen(true)
+}
+
+const handleClosePopUp = () => {
+  setisLoginOpen(false)
+}
+
   return (
     <>
     <div className="Nav_Bar">
@@ -17,10 +33,13 @@ function HomePage() {
           <Link className="about_us" to="">About Us</Link>
         </div>
         <div className="rightcontent">
-        <Link className="signup_link" to=""><button className="signup_button">Login</button></Link>
-        <Link className="signup_link" to=""><button className="signup_button">Sign Up</button></Link>
+        <Link className="signup_link" to=""><button onClick={handleLoginPopUp} className="signup_button">Login</button></Link>
+        <Link className="signup_link" to=""> <button onClick={handleLoginPopUp} className="signup_button">Signup</button> </Link>
         </div>
     </div>
+    <Modal open={isLoginOpen} onClose={handleClosePopUp}>
+      <LoginPage/>
+    </Modal>
     <section className="hero_section">
     <video className="video_player" autoPlay loop muted playsInline>
       <source src={herovideo} type="video/mp4"/>
@@ -38,15 +57,15 @@ function HomePage() {
       <div className="featuredfunctions">
       <div className="Info">
         <span className="FeaturedTitle">DB Funcionality</span>
-        <h2 className="headline">create your database</h2>
+        <p className="headline">create your database</p>
       </div>
       <div className="Info">
         <span className="FeaturedTitle">Results</span>
-        <h2 className="headline">Manage your lab results</h2>
+        <p className="headline">Manage your lab results</p>
       </div>
       <div className="Info">
         <span className="FeaturedTitle">Check Data</span>
-        <h2 className="headline">See the latest Data</h2>
+        <p className="headline">See the latest Data</p>
       </div>
       </div>
     </>
