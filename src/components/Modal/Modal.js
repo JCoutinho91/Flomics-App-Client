@@ -9,6 +9,7 @@ if(!open) return null
         <div className='outerModal'>
         <div className='innerModal'>
         {children}
+        <br />
         <button onClick={onClose}>Close</button>
         </div>
         </div>

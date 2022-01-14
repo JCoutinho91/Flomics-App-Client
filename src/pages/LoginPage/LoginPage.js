@@ -5,6 +5,7 @@ import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 import authService from "../../services/auth.service";
+import "./LoginPage.css"
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -51,12 +52,12 @@ function LoginPage() {
 
   return (
     <div className="LoginPage">
-      <h1>Login</h1>
+      <h1 className="LoginTitle">Login</h1>
 
       <form onSubmit={handleLoginSubmit}>
         <label>Email:</label>
         <input type="text" name="email" value={email} onChange={handleEmail} />
-
+        <br />
         <label>Password:</label>
         <input
           type="password"
@@ -64,7 +65,7 @@ function LoginPage() {
           value={password}
           onChange={handlePassword}
         />
-
+        <br />
         <button type="submit">Login</button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
