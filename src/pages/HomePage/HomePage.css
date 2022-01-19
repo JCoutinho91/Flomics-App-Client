@@ -1,5 +1,154 @@
-* {
-  box-sizing: border-box;
+body{
   margin: 0;
-  padding: 0;
+}
+
+h1{
+  margin: 0;
+}
+p{
+  margin: 0;
+}
+
+.Nav_Bar{
+  position: relative;
+  z-index: 10;
+}
+
+.img_container{
+  padding-top: 10px;
+  text-align: center;
+}
+.logo_img{
+  height: 60px;
+  width: 270px;
+}
+
+.projectAboutus{
+  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.our_project{
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.about_us{
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.rightcontent{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  align-items: center;
+}
+
+.login_link{
+  font-size: 14px;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-decoration: none;
+  color: darkblue;
+}
+
+.signup_link{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.signup_button{
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: white;
+  border-radius: 5px;
+  color: #00AEEF;
+  border: none;
+}
+
+.hero_section{
+  height: 650px;
+}
+
+.video_player{
+  position: relative;
+  object-fit: cover;
+  min-height: 800px;
+  width: 100%;
+  height: 100%;
+  top: -180px;
+}
+
+.info_video{
+  position: absolute;
+  top: 40%;
+left:50%;
+transform: translateX(-50%);
+text-align: center;
+}
+
+.info_Title{
+  font-size: 40px;
+ color:#00AEEF;
+}
+
+.info_subtitle{
+  font-size: 40px;
+  color:white;
+  font-weight: bold;
+}
+
+.p_description{
+  margin-top: 30px;
+
+}
+.p_description2{
+  margin-top: 5px;
+}
+
+.start_here_button{
+  margin-top: 20px;
+  background-color: #00AEEF;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+}
+
+.featuredfunctions{
+  display: flex;
+  flex-direction: row;
+  z-index: 20;
+  justify-content: space-evenly;
+  position: relative;
+  top: -75px;
+}
+
+.Info{
+  background-color: #00AEEF;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+  padding: 12px 24px;
+}
+
+.FeaturedTitle{
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.headline{
+
 }
