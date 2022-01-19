@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
 import TopBar from "../../components/TopBar/TopBar"
 import SideBar from "../../components/SideBar/SideBar"
 import { DataGrid } from "@material-ui/data-grid";
-import FeaturedInfo from "../../components/FeaturedInfo/FeaturedInfo"
+import "./ResultsPage.css"
 const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005/api/users/current";
 
 
@@ -98,11 +97,12 @@ const columns = [
   return (
     <>
         <TopBar/>
-    <div className="dashboard">
-    <SideBar/>
-    <div className="home">
+        
+        <div className="dashboard">
+        <SideBar/>
+        <div className="home">
       <h1>Results:</h1>
-      <DataGrid
+      <DataGrid className="datatable"
         rows={userSamples}
         disableSelectionOnClick
         columns={columns}
@@ -110,7 +110,7 @@ const columns = [
         checkboxSelection
       />
       </div>
-    </div>
+      </div>
     </>
   );
 }

@@ -46,7 +46,7 @@ function BetaChart() {
   return (
     <div className="chart">
       <h3 className="chartTitle">Beta Variant</h3>
-      <select onChange={handleChange}>
+      <select className="select__country" onChange={handleChange}>
           {Array.from(new Set(region.map(obj => obj.Entity))).map(el => {
     return <option value={el}>{el}</option>
 })}

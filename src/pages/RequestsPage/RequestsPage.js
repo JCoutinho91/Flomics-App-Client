@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
+import "./RequestsPage.css"
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
 import TopBar from "../../components/TopBar/TopBar"
 import SideBar from "../../components/SideBar/SideBar"
 import { DataGrid } from "@material-ui/data-grid";
-import FeaturedInfo from "../../components/FeaturedInfo/FeaturedInfo"
 import AddRequest from "../../components/addRequest/addRequest"
 
 const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005";
@@ -75,7 +74,7 @@ const refreshList = async () => {
     <div className="dashboard">
     <SideBar/>
     <div className="home">
-      <h1>Requests:</h1>
+      <h1 className="request_title">Your Request Results:</h1>
       <DataGrid
         rows={userRequests}
         disableSelectionOnClick

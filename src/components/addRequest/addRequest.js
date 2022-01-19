@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./addRequest.css"
 import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
@@ -43,16 +44,16 @@ function AddRequest({ refreshList }) {
     }
   };
 
-  return (
+  return (<>
+      <h2 className="request_title">Ask for a Request Here:</h2>
     <div className="AddProject">
-      <h3>New Request</h3>
 
-      <form onSubmit={handleSubmit}>
-        <label>Name</label>
+      <form className="request_form" onSubmit={handleSubmit}>
+        <label>Request Name:</label>
         <input name="title" type="text" value={name} onChange={handleName} />
-        <label>Size</label>
+        <label>Size of Sample</label>
         <input name="size" type="text" value={size} onChange={handleSize} />
-        <label>Variant</label>
+        <label>Found Variant</label>
         <input
           name="variant"
           type="text"
@@ -70,6 +71,7 @@ function AddRequest({ refreshList }) {
         <button type="submit">Add Request</button>
       </form>
     </div>
+    </>
   );
 }
 

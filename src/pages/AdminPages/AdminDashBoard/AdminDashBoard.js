@@ -42,26 +42,25 @@ function AdminDashBoard() {
     <TopBar/>
     <div className="AdminList">
       <div className="Requests">
-      <ul>
-      <h2>Requests:</h2>
-      <br/>
+      <h2>Requests List:</h2>
         {userRequests.map((el) => (
           <div className="requestitem">
-            <li><b>Company : </b>{el.name}</li>
-            <li><b>Sample Size : </b>{el.size}</li>
-            <li><b>Status : </b>{el.status}</li>
-            <li><b>Variants : </b>{el.variants}</li>
-            <li><b>Observations :</b> {el.observations}</li>
-            <br/>
+            <div className="companyName">
+            <h3>{el.name}</h3>
+            </div>
+              <div className="companyinfo">
+              <p>Sample Size <br /> <span className="p__value">{el.size}</span></p>
+              <p>Current Status<br /><span className="p__value">{el.status}</span></p>
+              <p>Found Variant<br /><span className="p__value">{el.variants}</span></p>
+              <p>Notes<br /><span className="p__value">{el.observations}</span></p>
+            </div>
             <button className="editbtn">
-              <Link to={`/admindashboard/requests/${el._id}`}>Edit</Link>
+            <Link to={`/admindashboard/requests/${el._id}`}>Edit</Link>
             </button>
             </div>
         ))}
-      </ul>
       </div>
       <div className="Samples">
-      <ul>
       <h2>Samples:</h2>
       <br/>
         {userSamples.map((el) => (
@@ -84,7 +83,6 @@ function AdminDashBoard() {
             </button>
           </>
         ))}
-      </ul>
       </div>
       <div className="userdata">
       <ul>

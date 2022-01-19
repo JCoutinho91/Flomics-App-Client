@@ -7,7 +7,6 @@ function DashBoardPage() {
   return (
     <>
     <TopBar/>
-<FeaturedInfo/>
 <div className="dashboard">
     <SideBar/>
     <div className="home">

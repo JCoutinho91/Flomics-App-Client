@@ -47,7 +47,7 @@ function TopBar() {
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">
-            Welcome! {name}
+            <span className="welcome__title">Welcome!</span> {name}
           </div>
           <Link to="/profile"><img src={mockcompany} alt="userimg" className="topavatar" /></Link>
         </div>

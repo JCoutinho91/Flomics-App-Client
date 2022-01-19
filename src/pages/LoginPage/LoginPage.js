@@ -4,7 +4,6 @@ import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 const authUrl = process.env.REACT_APP_SERVER_URL || "http://localhost:5005"
-import "./LoginPage.css"
 
 function LoginPage() {
   const [email, setEmail] = useState("");

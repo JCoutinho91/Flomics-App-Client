@@ -17,6 +17,7 @@
   .logoimg {
     width: 50%;
     margin-top: 25px;
+    margin-left: 0;
   }
   
   .bellimg {
@@ -66,5 +67,10 @@
   
 
   .topleft{
-      margin-left:0px
+      margin-left:-100px;
+  }
+
+  .welcome__title{
+    color: #00adef;
+    background-color: white;
   }
