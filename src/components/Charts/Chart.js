@@ -44,12 +44,14 @@ function Chart() {
   };
   return (
     <div className="chart">
+      <div className="selectdiv">
       <h3 className="chartTitle">Variants Overview</h3>
-      <select onChange={handleChange}>
+      <select className="select__country" onChange={handleChange}>
           {Array.from(new Set(region.map(obj => obj.Entity))).map(el => {
     return <option key={el._id} value={el}>{el}</option>
 })}
         </select>
+        </div>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             width={500}

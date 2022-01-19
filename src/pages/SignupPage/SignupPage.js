@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function SignupPage(props) {
   const [email, setEmail] = useState("");
@@ -27,7 +27,7 @@ function SignupPage(props) {
         { headers: { Authorization: `Bearer ${authToken}`} }
       )
 
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       setErrorMessage("Something went wrong");
     }
@@ -57,8 +57,6 @@ function SignupPage(props) {
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
     </div>
   );
 }

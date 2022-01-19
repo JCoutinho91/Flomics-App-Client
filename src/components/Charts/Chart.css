@@ -10,8 +10,20 @@
   
   .chartTitle {
     margin-bottom: 20px;
-    font-size: 30px;
-    font-weight: 800;
+    font-size: 40px;
+    font-weight: 600;
     color: #1fb7f1;
+    text-align: center;
   }
   
+  .selectdiv{
+    text-align: center;
+
+  }
+  .select__country{
+    padding: 10px;
+    background-color: #1fb7f1;
+    color: white;
+    font-weight: 600;
+    border-radius: 15px;
+  }

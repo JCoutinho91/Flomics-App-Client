@@ -2,7 +2,6 @@ import "./DashBoard.css";
 import Chart from "../../components/Charts/Chart"
 import TopBar from "../../components/TopBar/TopBar"
 import SideBar from "../../components/SideBar/SideBar"
-import FeaturedInfo from "../../components/FeaturedInfo/FeaturedInfo"
 
 
 function DashBoardPage() {

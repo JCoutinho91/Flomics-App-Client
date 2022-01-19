@@ -6,19 +6,27 @@ import Modal from "../../components/Modal/Modal";
 import { useState } from "react";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
+import SignUpModal from "../../components/Modal/SignUpModal";
 
 
 function HomePage() {
-const [isLoginOpen, setisLoginOpen] = useState(false)
-const [isSignUpOpen, setisSignUpOpen] = useState(false)
+const [isLoginOpen, setLoginOpen] = useState(false)
+const [isSignUpOpen, setSignUpOpen] = useState(false)
 
 
-const handleLoginPopUp = () => {
-  setisLoginOpen(true)
+const handleLoginModal = () => {
+  setLoginOpen(true)
 }
 
-const handleClosePopUp = () => {
-  setisLoginOpen(false)
+const handleLoginClose = () => {
+  setLoginOpen(false)
+}
+
+const handleSignUpModal = () => {
+  setSignUpOpen(true)
+}
+const handleSignUpClose = () => {
+  setSignUpOpen(false)
 }
 
   return (
@@ -33,13 +41,16 @@ const handleClosePopUp = () => {
           <Link className="about_us" to="">About Us</Link>
         </div>
         <div className="rightcontent">
-        <Link className="signup_link" to=""><button onClick={handleLoginPopUp} className="signup_button">Login</button></Link>
-        <Link className="signup_link" to=""> <button onClick={handleLoginPopUp} className="signup_button">Signup</button> </Link>
+        <Link className="signup_link" to=""><button onClick={handleLoginModal} className="signup_button">Login</button></Link>
+        <Link className="signup_link" to=""> <button onClick={handleSignUpModal} className="signup_button">Signup</button> </Link>
         </div>
     </div>
-    <Modal open={isLoginOpen} onClose={handleClosePopUp}>
+    <Modal open={isLoginOpen} onClose={handleLoginClose}>
       <LoginPage/>
     </Modal>
+    <SignUpModal open={isSignUpOpen} onClose={handleSignUpClose}>
+      <SignupPage/>
+    </SignUpModal>
     <section className="hero_section">
     <video className="video_player" autoPlay loop muted playsInline>
       <source src={herovideo} type="video/mp4"/>
