@@ -77,7 +77,7 @@ function AdminDashBoard() {
             <li><b>Mu : </b>{el.Mu}</li>
             <li><b>Omicron :</b> {el.Omicron}</li>
             <br />
-            <button className="editbtn">>
+            <button className="editbtn">
               {" "}
               <Link to={`/admindashboard/samples/${el._id}`}>Edit</Link>
             </button>

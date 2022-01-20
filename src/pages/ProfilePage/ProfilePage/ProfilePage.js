@@ -1,12 +1,3 @@
-import {
-  CalendarToday,
-  LocationSearching,
-  MailOutline,
-  PermIdentity,
-  PhoneAndroid,
-  Publish,
-} from "@material-ui/icons";
-import { Link } from "react-router-dom";
 import "./ProfilePage.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -20,7 +11,7 @@ export default function User() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
 
-const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+const { isLoggedIn, logOutUser } = useContext(AuthContext);
 
 const navigate = useNavigate();
 
